@@ -1,0 +1,312 @@
+* {
+    font-family: 'Lato', sans-serif;
+    z-index: 9999;
+}
+
+.toggle-button {
+    position: absolute;
+    right: -110px;
+    top: 5%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+}
+
+.toggle-button img {
+    width: 25px;
+    /* Ajusta según el tamaño de tus imágenes */
+    height: 25px;
+}
+
+.sidebar {
+    transition: width 0.3s ease;
+}
+
+
+.sidebar.collapsed .toggle-button {
+    right: -45px;
+}
+
+.sidebar:not(.collapsed) .toggle-button {
+    right: -110px;
+    /* Hace que el botón sobresalga 20px */
+    top: 5%;
+    /* O ajusta según prefieras cuando esté expandido */
+}
+
+nav {
+    padding-right: 20px;
+}
+
+
+.sidebar {
+    position: sticky;
+    top: 0;
+    width: 220px;
+    /* Ajusta el ancho según tus necesidades */
+    height: 100vh;
+    /* Ocupa toda la altura de la ventana */
+    background: var(--white-100, #FFF);
+    transition: width 0.3s ease;
+    padding: 20px 10px;
+    /* Añade padding para centrar el contenido */
+    /* Evita que el sidebar se reduzca en tamaño */
+}
+
+.sidebar.collapsed {
+    transition: width 0.3s ease;
+    width: 100px;
+    /* Reducido para un colapso más compacto */
+}
+
+.sidebar button {
+    width: 100%;
+    text-align: right;
+    padding: 10px;
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: baseline;
+    /* Centra los elementos horizontalmente */
+}
+
+.sidebar-item {
+    margin: 10px 0;
+    width: 100%;
+}
+
+.sidebar-item a {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+
+    padding: 10px;
+    text-decoration: none;
+    color: #000000;
+    width: 100%;
+    max-width: 180px;
+    margin: 0 auto;
+}
+
+.sidebar-item a:hover .slidebar-link.active {
+    color: #000000;
+}
+
+.sidebar-item .slidebar-link.active .slidebar-title {
+    color: #000000;
+}
+
+.icon-container,
+.title-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.icon-container {
+    width: 24px;
+    height: 24px;
+    margin-right: 5px;
+}
+
+.slidebar-img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.slidebar-title {
+    font-size: 1rem;
+}
+
+.sidebar.collapsed .sidebar-item a {
+    // width: 54px; 
+    height: 45px;
+    padding: 5px;
+    justify-content: center;
+}
+
+.sidebar.collapsed .icon-container {
+    margin-right: 0;
+}
+
+.sidebar.collapsed .title-container {
+    display: none;
+}
+
+.slidebar-link:hover,
+.slidebar-link.active {
+    background: var(--white-100, #FFF);
+    box-shadow: 0px 7px 10px 0px rgba(0, 0, 0, 0.03);
+    border: 1.355px solid #EFEEEB;
+    border-radius: 3px;
+}
+
+.sidebar.collapsed .iconCustom {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.sidebar.collapsed .iconPush {
+    width: 75px;
+}
+
+.sidebar.collapsed .iconIT {
+    width: 35px;
+}
+
+.iconCustom {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.iconPush {
+    width: 95px;
+}
+
+.iconIT {
+    width: 35px;
+}
+
+.sidebar .collapsed .vertical-icons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.vertical-icons {
+    margin-right: 3px;
+}
+
+.custom-hr {
+    height: 1.018px;
+}
+
+.hide {
+    display: none;
+}
+
+.sidebar-item {
+    .main-link {
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        padding: 10px;
+
+        &.active {
+            background: var(--white-100, #FFF);
+            box-shadow: 0px 7px 10px 0px rgba(0, 0, 0, 0.03);
+            border: 1.355px solid #EFEEEB;
+            border-radius: 16.261px;
+        }
+    }
+
+    .submenu {
+        display: flex;
+        align-items: baseline;
+        list-style-type: none;
+        padding-left: 30px;
+        margin-top: 10px;
+        overflow: hidden; // Previene desbordamiento durante la transición
+        //  max-height: 0; // Inicia colapsado
+        //  opacity: 0; // Inicia transparente
+        transition: max-height 0.5s ease, opacity 0.5s ease; // Transición suave
+    }
+
+
+
+    .submenu li {
+        margin-bottom: 10px;
+    }
+
+    .submenu li .submenuNew {
+        padding-left: 30px;
+        margin-bottom: 15px;
+
+    }
+
+    .submenu a {
+        text-decoration: none;
+        color: inherit;
+        font-size: 13px;
+        display: block;
+        padding: 5px 15px;
+    }
+
+
+    .submenu a.active {
+        background-color: rgba(241, 135, 1, 0.10);
+        width: 150px;
+        padding: 10px 10px;
+        color: #F64B1D;
+        border-radius: 16.261px;
+
+    }
+
+    .sidebar-item ul {
+        padding-left: 14px;
+        position: absolute;
+    }
+
+    .menuBox {
+        position: absolute;
+        top: 160px;
+        left: 100px;
+        width: 200px;
+        border-radius: 12px;
+        background: #FFF;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+    }
+
+    .menuBox ul {
+        list-style-type: none;
+        padding: 0;
+    }
+
+    .submenuNew {
+        padding-left: 10px;
+    }
+
+    .submenuNew:hover {
+        color: #F64B1D;
+        text-decoration: none;
+    }
+
+    .menuBox li a {
+        display: block;
+        padding: 8px 10px;
+        color: #333;
+        text-decoration: none;
+        transition: background-color 0.3s, color 0.3s;
+    }
+
+    .menuBox li a:hover {
+        color: #F64B1D;
+        width: 160px;
+        background-color: rgba(241, 135, 1, 0.10);
+        border-radius: 16.261px;
+        transition: background-color 0.3s, color 0.3s;
+    }
+
+    .menuBox ul li a.active {
+        color: #F64B1D;
+        background-color: rgba(241, 135, 1, 0.10);
+        border-radius: 16.261px;
+        padding-left: 1rem;
+        transition: all 0.3s ease;
+        width: 160px;
+    }
+}

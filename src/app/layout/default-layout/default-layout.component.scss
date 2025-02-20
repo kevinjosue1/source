@@ -1,0 +1,19 @@
+*{
+  background: #F7F9FC;
+  font-family: Lato;
+  color: #0C0C0D;
+}
+
+:host {
+  .ng-scrollbar {
+    --scrollbar-padding: 1px;
+    --scrollbar-size: 5px;
+    --scrollbar-thumb-color: var(--cui-gray-500, #000000);
+    --scrollbar-thumb-hover-color: var(--cui-gray-400, #000000);
+    --scrollbar-hover-size: calc(var(--scrollbar-size) * 1.5);
+    
+  }
+}
+app-default-header {
+  border-bottom: none;
+}

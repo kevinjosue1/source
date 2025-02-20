@@ -1,0 +1,15 @@
+<div class="container mt-3">
+    <input type="text" class="form-control" placeholder="Enter your name session" [value]="sessionName" [(ngModel)]="sessionName">
+    <div class="container d-flex justify-content-center mt-3">
+        <button cButton color="dark" variant="outline" (click)="newSessionAdd()" class="mx-3">Join</button>
+        <button *ngIf="sessionName" cButton color="danger" variant="outline" (click)="deletedSession()" class="mx-3">Delete Session</button>
+    </div>
+    
+    <div *ngIf="codeQr" class="container m-4 d-flex justify-content-center">
+        <img [src]="codeQr" alt="no imagen">
+    </div>
+
+    <div *ngIf="!codeQr" class="container m-4 d-flex justify-content-center">
+        <h4>{{message}}</h4>
+    </div>
+</div>

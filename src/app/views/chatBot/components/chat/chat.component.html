@@ -1,0 +1,71 @@
+<div class="backgraund">
+  <div class="c-card-header">
+    <div class="left-section">
+      <c-avatar shape="rounded-1" [size]="'xl'" src="../../../../../assets/iconosChatbot/imgDefaultFB.jpg"
+        status="success" textColor="primary"></c-avatar>
+      <div class="user-info">
+        <h5 class="user-name">USUARIO</h5>
+        <span class="user-status">online</span>
+      </div>
+    </div>
+    <div class="icon-container">
+      <h5>Bot</h5>
+      <mat-slide-toggle [checked]="true">
+      </mat-slide-toggle>
+      
+      <!-- <div>
+        <img src="assets/iconosChatbot/simbolo-de-la-interfaz-de-busqueda.png" class="mt-1" width="30" alt="">
+      </div>
+      <div>
+        <img src="assets/iconosChatbot/telefono.png" width="40" alt="">
+      </div>
+      <div>
+        <img src="assets/iconosChatbot/video.png" width="40" alt="">
+      </div> -->
+    </div>
+  </div>
+  <div #scrollContainer class="c-card-body">
+    <div class="message-container mt-4 m-3">
+
+      <div *ngFor="let message of messages">
+        <!-- Mensaje de envío -->
+        <div class="message send-message" *ngIf="message.type === 'send'">
+            <p class="message-content">{{ message.content }}</p>
+        </div>
+    
+        <!-- Mensaje de respuesta -->
+        <div class="message response-message" *ngIf="message.type === 'response'">
+          
+            <p class="message-content">{{ message.content }}</p>
+        </div>
+    </div>
+    
+
+
+
+
+    </div>
+  </div>
+  <div class="c-card-footer mt-4 m-2">
+    <div class="left-icons">
+      <fa-icon [icon]="faEllipsis" class="fa-xl"></fa-icon>
+      <div>
+        <img src="assets/iconosChatbot/cara-feliz.png" width="30" alt="">
+      </div>
+    </div>
+    <input type="text" placeholder="Escriba su mensaje" class="form-control" [(ngModel)]="newMessage"
+      (keyup.enter)="sendMessage()">
+
+    <div class="right-icons">
+      <div>
+        <img *ngIf="!recording" src="assets/iconosChatbot/microfono.png" style="cursor: pointer;" width="30" alt=""
+          (click)="startRecording()">
+        <img *ngIf="recording" src="assets/iconosChatbot/microfonoGrabando.png" style="cursor: pointer;" width="35"
+          alt="" (click)="stopRecording()">
+      </div>
+      <div>
+        <img src="assets/iconosChatbot/enviar.png" width="30" alt="" style="cursor: pointer;" (click)="sendMessage()">
+      </div>
+    </div>
+  </div>
+</div>

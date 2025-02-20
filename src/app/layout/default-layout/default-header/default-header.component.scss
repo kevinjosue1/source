@@ -1,0 +1,49 @@
+.mainApp{
+  display: flex;
+  justify-content: space-evenly;
+}
+.btn-no-style {
+    background-color: transparent;
+    border: none;
+    box-shadow: none;
+    padding: 0;
+    margin: 0;
+    outline: none;
+  }
+
+  .icon-badge-container {
+    display: flex;
+    align-items: end;
+    justify-content: end;
+
+  }
+  .icon-large {
+    width: 48px;
+    height: 48px;
+  }
+  
+
+  .iconGraund {
+    border-radius: 32px;
+    border: 1px solid var(--Gray-200, #EAECEE);
+    background: var(--white-100, #FFF);
+  }
+
+  .badge-position {
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: translate(90%, -50%);
+    z-index: 1;
+    
+  }
+
+  .link-style {
+    margin-bottom: 20px;
+  }
+  
+  .tooltip-custom .tooltip-inner {
+    margin-left: 20px; 
+  }
+  
+  

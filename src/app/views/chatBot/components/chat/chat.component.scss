@@ -1,0 +1,123 @@
+.backgraund {
+  height: auto;
+  min-height: 420px;
+  border-radius: 20px;
+ // border: 2px solid #ECEEF6;
+  background: var(--white-100, #FFF);
+  transition: padding 0.3s ease, margin-top 0.3s ease, height 0.3s ease;
+  margin-bottom: 20px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.c-card-header {
+  padding: 10px;
+  background-color: #e9e8e8ce;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.c-card-body {
+  background: linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)), url('../../../../../assets/iconosChatbot/fondoPalChat.jpg');
+  height: 400px;
+  overflow-y: auto;
+}
+
+
+.left-section {
+  display: flex;
+  align-items: center;
+}
+
+.user-info {
+  display: flex;
+  flex-direction: column;
+  margin-left: 10px;
+}
+
+.user-info .user-name {
+  margin-bottom: 5px;
+}
+
+.icon-container {
+  display: flex;
+  justify-content: flex-end;
+  gap: 15px;
+}
+
+.c-card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+}
+
+.left-icons, .right-icons {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+input.form-control {
+  flex-grow: 1;
+  margin: 0 10px;
+  max-width: 100%;
+}
+
+
+
+.audio-message .audio-container {
+      padding: 10px;
+      margin-left: 930px;
+      border-radius: 10px;
+}
+
+.audio-container audio {
+  margin-bottom: 5px;
+  border-radius: 5px;
+  background-color: white;
+}
+
+.message-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.message {
+  padding: 10px;
+  border-radius: 10px;
+  max-width: 60%;
+  word-wrap: break-word;
+  position: relative;
+}
+
+.send-message {
+  align-self: flex-end;
+  background-color: #e1ffc7;
+  margin-left: 300px;
+  border-radius: 15px 45px 0px 0;
+}
+
+
+.response-message {
+  align-self: flex-start;
+  background-color: #f1f0f0;
+  border-radius: 34px 15px 15px 0px;
+}
+
+
+
+.message-content {
+  margin: 0;
+  font-size: 14px;
+}
+
+.mt-4 {
+  margin-top: 1.5rem;
+}
+
+.m-3 {
+  margin: 1rem;
+}
