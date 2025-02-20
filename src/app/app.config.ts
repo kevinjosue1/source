@@ -15,7 +15,7 @@ import { IconSetService } from '@coreui/icons-angular';
 import { routes } from './app.routes';
 import { provideHttpClient } from '@angular/common/http';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
-import { SignalrService } from './signalr.service';
+import { SignalrService } from './Services/signalr.service';
 
 export const appConfig: ApplicationConfig = {
   providers: [

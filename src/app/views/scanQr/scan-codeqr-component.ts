@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { ButtonModule } from '@coreui/angular';
-import  { BaileysApiService } from '../../Services/BaileysApi/baileys-api.service'
+import  { BaileysApiService } from '../../Services/baileys-api.service'
 @Component({
   selector: 'app-qr-chat',
   standalone: true,

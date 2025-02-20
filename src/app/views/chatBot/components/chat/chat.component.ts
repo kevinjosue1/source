@@ -5,8 +5,8 @@ import { faEllipsis } from '@fortawesome/free-solid-svg-icons';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { DomSanitizer } from '@angular/platform-browser';
-import { BaileysApiService } from 'src/app/Services/BaileysApi/baileys-api.service';
-import { SignalrService } from 'src/app/signalr.service';
+import { BaileysApiService } from '../../../../Services/baileys-api.service';
+import { SignalrService } from '../../../../Services/signalr.service';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 
 
