@@ -1,19 +1,23 @@
-import { ChangeDetectorRef, Component, computed, DestroyRef, inject } from '@angular/core';
+import {  Component, computed, DestroyRef, inject } from '@angular/core';
+import { RouterModule } from '@angular/router';
 import {
   ContainerComponent,
   ColorModeService,
-  HeaderComponent
+  HeaderComponent,
+  NavbarModule ,
+  NavModule,
+  NavLinkDirective,
+  SidebarNavComponent
 } from '@coreui/angular';
+import { CollapseModule } from '@coreui/angular';
+import { IconModule } from '@coreui/icons-angular';
 import { ActivatedRoute } from '@angular/router';
-import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
-import { delay, filter, map, tap } from 'rxjs/operators';
-import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-default-header',
   templateUrl: './default-header.component.html',
   standalone: true,
-  imports: [ ContainerComponent]
+  imports: [ ContainerComponent, RouterModule, NavbarModule, NavModule, NavLinkDirective, SidebarNavComponent, CollapseModule, IconModule]
 })
 
 export class DefaultHeaderComponent extends HeaderComponent {
@@ -34,22 +38,8 @@ export class DefaultHeaderComponent extends HeaderComponent {
     return this.colorModes.find(mode => mode.name === currentMode)?.icon ?? 'cilSun';
   });
 
-  constructor( private router: Router,  private cdRef: ChangeDetectorRef) {
+  constructor() {
     super();
-    this.#colorModeService.localStorageItemName.set('coreui-free-angular-admin-template-theme-default');
-    this.#colorModeService.eventName.set('ColorSchemeChange');
-
-    this.#activatedRoute.queryParams
-      .pipe(
-        delay(1),
-        map(params => <string>params['theme']?.match(/^[A-Za-z0-9\s]+/)?.[0]),
-        filter(theme => ['dark', 'light', 'auto'].includes(theme)),
-        tap(theme => {
-          this.colorMode.set(theme);
-        }),
-        takeUntilDestroyed(this.#destroyRef)
-      )
-      .subscribe();
   }
 
 

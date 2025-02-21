@@ -56,6 +56,13 @@ listOfContacts(sessionName: string): Observable<any> {
   return this.http.get<any>(`${this.BASE_URL}/${sessionName}/contacts`, { headers });
 }
 
+getSessions(): Observable<any> {
+  const headers = {
+    'x-api-key': this.API_KEY,
+    'Content-Type': 'application/json' 
+  };
+  return this.http.get<any>(`${this.BASE_URL}/sessions`, { headers });
+}
 
 chatbotAIResponse(suscriberTo: number, promptRequest: string): Observable<any> {
 return this.http.get<any>(`https://192.168.100.5/ai/Chat?CampaignId=1&SubscriberFrom=593990897441&SubscriberTo=${suscriberTo}&PromtRequest=${promptRequest}`);

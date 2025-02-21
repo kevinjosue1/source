@@ -1,49 +1,17 @@
-.mainApp{
-  display: flex;
-  justify-content: space-evenly;
+.nav-link {
+  border: none;
+  transition: all 0.3s ease-in-out;
 }
-.btn-no-style {
-    background-color: transparent;
-    border: none;
-    box-shadow: none;
-    padding: 0;
-    margin: 0;
-    outline: none;
-  }
 
-  .icon-badge-container {
-    display: flex;
-    align-items: end;
-    justify-content: end;
+.nav-link:hover,
+.nav-link.active {
+  border-bottom: 2px solid #000; 
+}
 
-  }
-  .icon-large {
-    width: 48px;
-    height: 48px;
-  }
-  
 
-  .iconGraund {
-    border-radius: 32px;
-    border: 1px solid var(--Gray-200, #EAECEE);
-    background: var(--white-100, #FFF);
-  }
-
-  .badge-position {
-    position: absolute;
-    top: 0;
-    right: 0;
-    transform: translate(90%, -50%);
-    z-index: 1;
-    
-  }
-
-  .link-style {
-    margin-bottom: 20px;
-  }
-  
-  .tooltip-custom .tooltip-inner {
-    margin-left: 20px; 
-  }
-  
-  
+.nav-link:hover,
+.nav-link.active {
+  border: 2px solid #000; 
+  border-radius: 5px; 
+  padding: 5px;
+}

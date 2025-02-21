@@ -14,23 +14,35 @@ export class ChatQrComponent {
   sessionName: string = "";
   message: string = "";
   codeQr: string = "";
-constructor(private baileysApi: BaileysApiService) { }
+  sessionObjet: string[] = [];
+  constructor(private baileysApi: BaileysApiService) { }
 
 ngOnInit(){
   const sessionID = localStorage.getItem('sessionName');
   if (sessionID) {
     this.sessionName = sessionID;
   }
+this.getSessions()
 }
+
+
+getSessions() {
+  this.baileysApi.getSessions().subscribe((response) => {
+    this.sessionObjet = response?.map((item: { id: string }) => item.id) || [];
+    console.log(this.sessionObjet);
+  });
+}
+
+
 
 newSessionAdd(){
   localStorage.setItem('sessionName', this.sessionName)
   const data = {
     sessionId: this.sessionName
   }
-
   this.baileysApi.sessionAdd(data).subscribe((Response) => {
     this.codeQr = Response.qr
+  
   })
 }
 
@@ -39,10 +51,15 @@ deletedSession(){
   this.baileysApi.deletedSession(this.sessionName).subscribe((Response) => {
     this.message = Response.message
     this.codeQr = ""
-    console.log(this.message)
   })
   localStorage.removeItem('sessionName')
   this.sessionName  = ""
+}
+
+profileSelected(event: Event) {
+  const target = event.target as HTMLSelectElement;
+  const selectedId = target.value;
+  this.sessionName = selectedId;
 }
 
 }

@@ -1,3 +1,38 @@
-<c-container [fluid]="true" class="px-2 d-flex justify-content-between align-items-center ">
+<!-- <nav class="navbar navbar-expand-lg">
+    <div class="container-fluid">
+        <a class="navbar-brand" [routerLink]="['/ChatBot']">
+            <img src="../../../../assets/iconosChatbot/593code.JPG" style="width: 70px;" class="img-fluid">
+        </a>
 
-</c-container>
+        <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse"
+            data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false"
+            aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+                <a class="nav-link active" aria-current="page" routerLink="/">Chat bot</a>
+                <a class="nav-link" routerLink="/features">Features</a>
+                <a class="nav-link" routerLink="/pricing">Pricing</a>
+                <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+            </div>
+        </div>
+    </div>
+</nav> -->
+
+<c-navbar  colorScheme="light" expand="lg">
+    <c-container fluid>
+            <a cNavbarBrand class="navbar-brand" [routerLink]="['/ChatBot']">
+                <img src="../../../../assets/iconosChatbot/593code.JPG" style="width: 70px;" class="img-fluid">
+            </a>
+        <button [cNavbarToggler]="collapseRef"></button>
+        <div #collapseRef="cCollapse" cCollapse navbar>
+            <c-navbar-nav class="me-auto mb-2 mb-lg-0">
+                <a cNavLink routerLink="/ChatBot" routerLinkActive="active" >Chat Bot</a>
+                <!-- <a cNavLink routerLink="./features" routerLinkActive="active">Features</a>
+                <a cNavLink routerLink="./pricing" routerLinkActive="active">Pricing</a>
+                <a cNavLink disabled routerLink="./">Disabled</a> -->
+            </c-navbar-nav>
+        </div>
+    </c-container>
+</c-navbar>

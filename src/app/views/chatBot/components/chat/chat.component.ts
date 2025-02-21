@@ -68,7 +68,8 @@ export class ChatComponent {
     try {
         if (chatmessageInfo && chatmessageInfo.startsWith('{') && chatmessageInfo.endsWith('}')) {
             jsonChatMessage = JSON.parse(chatmessageInfo);
-        }
+            console.log(jsonChatMessage);
+          }
     } catch (error) {
     }
 
